@@ -1,0 +1,27 @@
+# 电脑安装有anaconda，则创建虚拟环境，如果直接安装的python环境请确保版本与pytorch匹配
+conda create -n nerf python==3.9 -y  # 作者使用的是3.9版本的python
+conda install  cudatoolkit=11.3.1 cudnn=8.2.1 # cuda版本请根据自己的显卡确定
+conda install pytorch==1.12.0 torchvision==0.13.0 # pytorch版本需与cuda版本匹配
+'''上述的基础安装请一定要确保各版本之间兼容，可以查看pytorch官网https://pytorch.org/get-started/previous-versions/
+'''作者在这里列一些常用的版本供参考：
+PyTorch 版本	Python 版本	CUDA 版本	cuDNN 版本
+1.13.0		3.7, 3.8, 3.9, 3.10	11.6, 11.3, 10.2	8.x
+1.12.0		3.7, 3.8, 3.9, 3.10	11.3, 10.2		8.x
+1.11.0		3.6, 3.7, 3.8, 3.9	11.3, 10.2		8.x
+1.10.0		3.6, 3.7, 3.8, 3.9	11.1, 10.2		8.x
+1.9.0		3.6, 3.7, 3.8, 3.9	11.1, 10.2		8.x
+1.8.0		3.6, 3.7, 3.8	11.1, 10.2		8.x
+1.7.0		3.6, 3.7, 3.8	11.0, 10.2		8.x
+1.6.0		3.5, 3.6, 3.7, 3.8	10.2		7.x
+1.5.0		3.5, 3.6, 3.7	10.2, 10.1		7.x
+1.4.0		3.5, 3.6, 3.7	10.1		7.x
+# 接下来是一些库的安装，实际上你可以直接运行tran_nerf.py，根据报错信息安装库
+在虚拟环境（或是直接安装的python环境）中pip下列所有库
+pip install matplotlib
+pip install imageio imageio[ffmpeg]
+pip install tqdm
+pip install kornia
+pip install opencv_python
+pip install pyvista
+pip install configargparse
+# 如果在运行时还提示有库没有安装，请根据报错信息安装缺失的库

@@ -1,0 +1,10 @@
+pytorch==1.12.0
+torchvision==0.13.0
+matplotlib
+imageio
+imageio[ffmpeg]
+tqdm
+kornia
+opencv_python
+pyvista
+configargparse
